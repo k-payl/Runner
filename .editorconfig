@@ -16,3 +16,5 @@ trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+tab_with = 4
