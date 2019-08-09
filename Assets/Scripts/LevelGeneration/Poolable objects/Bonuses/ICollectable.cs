@@ -5,9 +5,9 @@ using System.Text;
 
 namespace LevelGeneration
 {
-    interface ICollectable
-    {
-        void Collect();
-        //void Remove();
-    }
+	interface ICollectable
+	{
+		void Collect();
+		//void Remove();
+	}
 }

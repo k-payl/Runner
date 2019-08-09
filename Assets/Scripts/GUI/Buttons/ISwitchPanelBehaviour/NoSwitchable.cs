@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class NoSwitchable : ISwitchPanelBehaviour {
-    public void Switch()
-    {
-        
-    }
+	public void Switch()
+	{
+		
+	}
 }

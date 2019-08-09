@@ -19,8 +19,8 @@ public class KeyBoardController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space))
 			Player.Jump(); 
 
-        if (Input.GetKeyDown(KeyCode.S))
-            Player.JumpDown();
+		if (Input.GetKeyDown(KeyCode.S))
+			Player.JumpDown();
 
 		if (Input.GetKeyDown(KeyCode.LeftControl))
 			Player.Attack(AttackType.Sword);

@@ -4,23 +4,23 @@ using System.Collections;
 
 namespace LevelGeneration
 {
-    [ExecuteInEditMode]
-    public class Positioning0_FixedFloor : PositioningFixedFloor
-    {
+	[ExecuteInEditMode]
+	public class Positioning0_FixedFloor : PositioningFixedFloor
+	{
 
-        public void Awake()
-        {
-            Floor = 0;
-        }
+		public void Awake()
+		{
+			Floor = 0;
+		}
 #if UNITY_EDITOR
-        public override void Update()
-        {
-            if (!Application.isPlaying)
-            {
-                base.Update();
-                BindToFloor();
-            }
-        }
+		public override void Update()
+		{
+			if (!Application.isPlaying)
+			{
+				base.Update();
+				BindToFloor();
+			}
+		}
 #endif
-    }
+	}
 }

@@ -4,8 +4,8 @@ using GamePlay;
 
 namespace LevelGeneration
 {
-    public class HalfBattery : OnceTimeBonus
-    {
-    }
+	public class HalfBattery : OnceTimeBonus
+	{
+	}
 
 }

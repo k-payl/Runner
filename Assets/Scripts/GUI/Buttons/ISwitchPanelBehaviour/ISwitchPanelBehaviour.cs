@@ -3,5 +3,5 @@ using System.Collections;
 
 public interface ISwitchPanelBehaviour
 {
-    void Switch();
+	void Switch();
 }

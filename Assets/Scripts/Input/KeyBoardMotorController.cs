@@ -5,20 +5,20 @@ using System.Collections;
 public class KeyBoardMotorController : MonoBehaviour
 {
 
-    private IMotorControl controller;
+	private IMotorControl controller;
 	void Start ()
 	{
-	    controller = MotorController.GetInstance();
+		controller = MotorController.GetInstance();
 	}
 	
 	void Update () {
 
-	    if (Input.GetKeyDown(KeyCode.Space))
-            controller.Jump(JumpDrection.Up);
+		if (Input.GetKeyDown(KeyCode.Space))
+			controller.Jump(JumpDrection.Up);
 
-         if (Input.GetKeyDown(KeyCode.S))
-             controller.Jump(JumpDrection.Down);
+		 if (Input.GetKeyDown(KeyCode.S))
+			 controller.Jump(JumpDrection.Down);
 
-        controller.TurnSmoothly(Input.GetAxis("Horizontal"));
+		controller.TurnSmoothly(Input.GetAxis("Horizontal"));
 	}
 }

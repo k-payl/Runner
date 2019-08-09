@@ -5,16 +5,16 @@ using System.Collections;
 
 namespace LevelGeneration
 {   
-    [System.Serializable]
-    public class PlaceForObstacle : PlaceForPolable
-    { 
+	[System.Serializable]
+	public class PlaceForObstacle : PlaceForPolable
+	{ 
 #if UNITY_EDITOR
-        void OnDrawGizmos()
-        {
-            DrawGizmo(Color.cyan);
-        }
+		void OnDrawGizmos()
+		{
+			DrawGizmo(Color.cyan);
+		}
 #endif
-        
+		
 
-    }
+	}
 }

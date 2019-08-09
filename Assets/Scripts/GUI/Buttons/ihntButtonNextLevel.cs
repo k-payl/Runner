@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ihntButtonNextLevel : ihntButtonBase
 {
-    public override void OnClick(dfControl control, dfMouseEventArgs args)
-    {
-    }
+	public override void OnClick(dfControl control, dfMouseEventArgs args)
+	{
+	}
 }

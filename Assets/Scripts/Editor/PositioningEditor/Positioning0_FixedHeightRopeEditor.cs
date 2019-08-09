@@ -7,7 +7,7 @@ using UnityEditor;
 public class Positioning0_FixedHeightRopeEditor : PositioningFixedHeightRopeEditor{
 
 	public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-    }
+	{
+		base.OnInspectorGUI();
+	}
 }

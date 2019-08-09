@@ -4,20 +4,20 @@ using System.Collections;
 public class PlayingAnimationDetector : MonoBehaviour
 {
 
-    public GameObject target;
+	public GameObject target;
 
-    void OnTriggerEnter()
-    {
-        if (target.animation)
-        {
-            target.animation.Play();
-            collider.enabled = false;
-        }
-    }
+	void OnTriggerEnter()
+	{
+		if (target.animation)
+		{
+			target.animation.Play();
+			collider.enabled = false;
+		}
+	}
 #if UNITY_EDITOR
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawIcon(transform.position, "anim_trigger.png");
-    }
+	void OnDrawGizmos()
+	{
+		Gizmos.DrawIcon(transform.position, "anim_trigger.png");
+	}
 #endif
 }

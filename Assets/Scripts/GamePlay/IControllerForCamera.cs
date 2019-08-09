@@ -2,6 +2,6 @@
 
 public interface IControllerForCamera
 {
-    bool IsOnGround();
-    Transform GetTransform();
+	bool IsOnGround();
+	Transform GetTransform();
 }

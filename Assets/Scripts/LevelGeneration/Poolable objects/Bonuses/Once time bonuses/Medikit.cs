@@ -4,8 +4,8 @@ using Sound;
 namespace LevelGeneration
 {
 
-    public class Medikit : OnceTimeBonus
-    {
-     
-    }
+	public class Medikit : OnceTimeBonus
+	{
+	 
+	}
 }

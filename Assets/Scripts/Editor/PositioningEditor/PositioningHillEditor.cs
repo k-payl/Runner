@@ -7,8 +7,8 @@ using UnityEditor;
 public class PositioningHillEditor : PositioningEditor
 {
 
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-    }
+	public override void OnInspectorGUI()
+	{
+		base.OnInspectorGUI();
+	}
 }

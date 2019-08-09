@@ -2,7 +2,7 @@
 
 namespace LevelGeneration
 {
-    public abstract class OnceTimeBonus : Bonus
-    {
-    }
+	public abstract class OnceTimeBonus : Bonus
+	{
+	}
 }
