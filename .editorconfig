@@ -10,7 +10,7 @@ insert_final_newline = true
 # Matches multiple files with brace expansion notation
 [*.{cs}]
 charset = utf-8
-indent_style = tab
+indent_style = smart_tabs
 indent_size = 4
 trim_trailing_whitespace = true
 
