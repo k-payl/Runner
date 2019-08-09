@@ -13,8 +13,8 @@ charset = utf-8
 indent_style = smart_tabs
 indent_size = 4
 trim_trailing_whitespace = true
+tab_with = 4
 
 [*.md]
 trim_trailing_whitespace = false
 
-tab_with = 4
