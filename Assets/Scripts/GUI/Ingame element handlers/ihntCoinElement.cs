@@ -13,7 +13,7 @@ public class ihntCoinElement : ihntBonusElementAbstract
 		if (countOfCoins == null) Debug.Log("countOfCoins==null in"+gameObject.name);
 		else
 			countOfCoins.Text = GetCorrectText(collection.score);
-		//Debug.Log("ihntCoinElement.HandleBonusCollected(): handeled");
+		
 	}
 
 	public override void HandleBonusMissed(Bonus bonus, BonusCollection collection)
@@ -21,7 +21,7 @@ public class ihntCoinElement : ihntBonusElementAbstract
 		if (countOfCoins == null) Debug.Log("countOfCoins==null in"+gameObject.name);
 		else
 			countOfCoins.Text = GetCorrectText(collection.score);
-		//Debug.Log("ihntCoinElement.HandleBonusMissed(): handeled");
+		
 	}
 
 	public override void JustUpdate(BonusCollection collection)
@@ -29,7 +29,7 @@ public class ihntCoinElement : ihntBonusElementAbstract
 		if (countOfCoins == null) Debug.Log("countOfCoins==null in"+gameObject.name);
 		else 
 		countOfCoins.Text = GetCorrectText(collection.score);
-		//Debug.Log("ihntCoinElement.JustUpdate(): handeled");
+		
 	}
 
 	protected string GetCorrectText(int score)

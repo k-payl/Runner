@@ -6,7 +6,7 @@ namespace LevelGeneration
 	public class PositioningByFloor : Positioning
 	{
 
-		// [HideInInspector]
+		
 		public int Floor;
 #if UNITY_EDITOR
 		public override void Update()

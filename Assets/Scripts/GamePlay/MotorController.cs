@@ -19,8 +19,8 @@ namespace GamePlay
 		public AnimationClip driveAnimation;
 		public AnimationClip TurnLeftAnimation;
 		public AnimationClip TurnRightAnimation;
-		//public AnimationClip JumpDownAnimation;
-		//public AnimationClip JumpUpAnimation;
+		
+		
 
 		private static MotorController instance;
 
@@ -45,7 +45,7 @@ namespace GamePlay
 
 		private void Update()
 		{
-			// X
+			
 			currentTurnValue = 0;
 			if (currentTurnValueU > 0)
 			{
@@ -68,7 +68,7 @@ namespace GamePlay
 				
 
 
-			// Y
+			
 			if (IsOnGround() && verticalSpeed <= 0)
 			{
 				verticalSpeed = 0;
@@ -78,7 +78,7 @@ namespace GamePlay
 				verticalSpeed -= Gravity*Time.deltaTime;
 			}
 
-			// Z 
+			
 			move = new Vector3(currentTurnValue, verticalSpeed, drivingSpeed);
 			controllerCollider.Move(move*Time.deltaTime);
 		}

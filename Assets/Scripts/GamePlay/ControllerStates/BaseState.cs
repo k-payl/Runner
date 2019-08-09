@@ -10,19 +10,19 @@ namespace GamePlay
 	public abstract class BaseState : IControllerState, IEquatable<BaseState>
 	{
 		protected static float verticalSpeed;
-		protected static bool wasInAirWhenAttacked = false;//for prevention of double-attack in air
+		protected static bool wasInAirWhenAttacked = false;
 		protected static TrackAbstract track;
 		protected static Controller controller;
 		protected static Transform controllerTransform;
-		protected static Vector3 result;//??
+		protected static Vector3 result;
 		protected static CharacterController controllerCollider;
 		private float XRaycastLenght;
 		private static Int32 turningIgnoreMask;
 		private static Int32 isGroundIgnoreMask;
-		//protected static bool isGrounded;
-		//protected static bool isStamered;
-		//protected static bool canAttack;
-		//protected static bool canJump;
+		
+		
+		
+		
 		private float ZOffsetRayCast = 0.0f;   
 
 		protected BaseState(Controller controller)
@@ -32,7 +32,7 @@ namespace GamePlay
 			track = Track3.GetInstance();
 			controllerCollider = controller.GetComponent<CharacterController>();
 			XRaycastLenght = Integrate(controller.ControllerParams.TurningCurve, 0f, 1f);
-			turningIgnoreMask = ~((1 << controller.gameObject.layer) | (1 << 2)); // Everything except player and chunk layers. It works very strange
+			turningIgnoreMask = ~((1 << controller.gameObject.layer) | (1 << 2)); 
 			isGroundIgnoreMask =~(1 << LayerMask.NameToLayer("IgnoreForIsGround"));
 		}
 
@@ -82,7 +82,7 @@ namespace GamePlay
 			}
 			else if (!isTurnAllow)
 			{
-				//Debug.Log("DisallowedTurningState");
+				
 				controller.DisallowedTurnState.Direction = direction;
 				controller.SetState(controller.DisallowedTurnState);
 				controller.soundEffects.PlayClip(PlayerClip.DissalowedTurnSound);
@@ -103,7 +103,7 @@ namespace GamePlay
 				? Vector3.left * XRaycastLenght * controller.ControllerParams.TurningSpeed + Vector3.forward * controller.ControllerParams.RunSpeed
 				: Vector3.right * XRaycastLenght * controller.ControllerParams.TurningSpeed + Vector3.forward * controller.ControllerParams.RunSpeed;
 			
-			// if in air then rotate raycastDirecton to 10 degree
+			
 			if (!IsGrounded())
 			{
 				Vector3 axisOfRotation = Vector3.Cross(raycastDirection, Vector3.up);
@@ -124,13 +124,13 @@ namespace GamePlay
 													   turningIgnoreMask);
 
 			bool isTurnAllow = true;
-			foreach (IPoolable poolable in hits.Select(hit => hit.collider.GetComponent(typeof (IPoolable))))//.OfType<IPoolable>())
+			foreach (IPoolable poolable in hits.Select(hit => hit.collider.GetComponent(typeof (IPoolable))))
 			{
 				if (poolable is Bonus || poolable is EnemyAbstract || poolable is PlaceForHill)
 					continue;
 				else
 				{
-					//Debug.Log("DisallowedTurn. " + poolable);
+					
 					isTurnAllow = false;
 					break;
 				}
@@ -145,7 +145,7 @@ namespace GamePlay
 
 		public virtual void Dead(DeadReason deadReason)
 		{
-		   // Debug.Log("Dead! "+deadReason);
+		   
 			controller.DeadState.DeadReason = deadReason;
 			controller.SetState(controller.DeadState);
 			
@@ -156,8 +156,8 @@ namespace GamePlay
 			result = Vector3.zero;
 			result.z = controller.ControllerParams.RunSpeed;
 			
-			//плавная корректировка по x-координате
-			//TODO вырубить дл оптимизации
+			
+			
 			result.x = ((track as Track3)!=null)? (track as Track3).CurrentXCoord - controllerTransform.position.x : 0;
 			
 			if(IsGrounded())
@@ -255,17 +255,17 @@ namespace GamePlay
 
 		protected virtual void HandeleCollide(Bonus bonus)
 		{
-			//говорим бонусу что его собрали
+			
 			bonus.Collect();
 
-			//если бонус временный, добавляем его к игроку.
+			
 			if (bonus is TimePeriodBonus)
 			{
 				controller.timePeriodBonuses.Add(bonus as TimePeriodBonus);
 			}
 			else
 			{
-				// одноразовые бонусы
+				
 				if (bonus is Coin)
 				{
 					GameManager.Instance.info.bonuses.IncScore((bonus as Coin).Score);
@@ -292,7 +292,7 @@ namespace GamePlay
 				}
 			}
 
-			//генерируем событие
+			
 			GameManager.Instance.BonusCollectedEvent(bonus, GameManager.Instance.info.bonuses);
 			
 		}
@@ -322,7 +322,7 @@ namespace GamePlay
 			}
 			else 
 			{
-			   // Debug.Log("непонятое в HandeleCollide(PlaceForObstacle obj, ControllerColliderHit hit)"); 
+			   
 			}
 		}
 
@@ -356,8 +356,8 @@ namespace GamePlay
 		
 
 
-		/// <summary>Делает нужные действия при переходе в отложенное в очередь состояние. 
-		/// Принимает RuningState, либо TurningState, либо  JumpingState, либо SwordAttackState, либо ShieldAttackState</summary>
+		
+		
 		protected virtual void ApplyLastState(BaseState state)
 		{
 			if (state is RuningState)

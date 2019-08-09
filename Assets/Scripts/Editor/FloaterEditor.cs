@@ -9,7 +9,7 @@ public class FloaterEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
-		//DrawDefaultInspector();
+		
 		(target as Floater).halfAmplitude = EditorGUILayout.FloatField("Derivation", (target as Floater).halfAmplitude);
 		(target as Floater).period = EditorGUILayout.FloatField("Period", (target as Floater).period);
 		(target as Floater).randomInitPosition = EditorGUILayout.Toggle("Randomize", (target as Floater).randomInitPosition);

@@ -8,9 +8,9 @@ namespace GamePlay
 	[Serializable]
 	public class TrackLine
 	{
-		/// <summary>
-		/// Координата центра линии, относительно центра трэка.
-		/// </summary>
+		
+		
+		
 		public float XCoord; 
 
 		public TrackLine(float x)
@@ -46,12 +46,12 @@ namespace GamePlay
 		[SerializeField] private TrackLine[] lines;
 		[SerializeField] private float lineWidth = 2.5f;
 
-		//X-координата линии lineNumber 
+		
 		public float XCoordOfLine(int lineNumber)
 		{
 
 			if(lineNumber >= 0 && lineNumber < lines.Length)
-				return lines[lineNumber].XCoord + collider.bounds.center.x; //Средняя линия должна находится в центре коллайдера. 
+				return lines[lineNumber].XCoord + collider.bounds.center.x; 
 			else
 			{
 				throw new ArgumentOutOfRangeException();
@@ -106,7 +106,7 @@ namespace GamePlay
 			if (d2 < d1) {i = 1;min = d2;}
 			if (d3 < min)i = 2;
 			currentLine = i;
-			//Debug.Log("Calculated number line ="+i);
+			
 		}
 
 
@@ -128,7 +128,7 @@ namespace GamePlay
 				Gizmos.DrawLine(startPoint + new Vector3(XCoordOfLine(i), 0f, 0),
 								ednPoint + new Vector3(XCoordOfLine(i), 0.01f, 0));
 			}
-			//   Gizmos.DrawLine(startPoint + new Vector3(LineWidth * lines.Length + collider.bounds.min.x, 0f, 0f), ednPoint + new Vector3(LineWidth * lines.Length + collider.bounds.min.x, 0f, 0f));
+			
 		}
 #endif
 

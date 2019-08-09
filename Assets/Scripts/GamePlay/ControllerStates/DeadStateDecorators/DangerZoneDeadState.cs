@@ -45,7 +45,7 @@ namespace GamePlay
 			float res;
 			if ( (Time.time - timer) >= delayTime )
 			{
-				//after pause
+				
 				PlayFinishAnimation();
 				if ( (Time.time - timer - delayTime) < timeOfDeath )
 				{
@@ -53,7 +53,7 @@ namespace GamePlay
 				}
 				else
 				{
-					//death
+					
 					res = 0f;
 				}
 			}

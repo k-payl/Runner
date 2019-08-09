@@ -26,8 +26,8 @@ namespace GamePlay
 		public override Vector3 UpdatePosition()
 		{
 		  
-			//result = base.UpdatePosition();
-			// теперь не зависит от base, т.к там выравнивание по линии. вместо этого ...  
+			
+			
 			result = Vector3.zero;
 			result.z = controller.ControllerParams.RunSpeed;
 			
@@ -42,7 +42,7 @@ namespace GamePlay
 			if (trackXCoord*(direction == TurnDirection.Left ? 1f : -1f) >=
 				controllerTransform.position.x*(direction == TurnDirection.Left ? 1f : -1f))
 			{
-				// конец
+				
 				if (wasInDangerZone)
 				{
 					controller.ApplyAnimation(controller.Animations.Run, controller.CrossfadeTimes.Run);
@@ -63,16 +63,16 @@ namespace GamePlay
 
 
 
-				//controller.ApplyAnimation((diff > 0) ?
-				//							controller.Animations.TurnToRight :
-				//							controller.Animations.TurnToLeft, controller.CrossfadeTimes.Turning);
+				
+				
+				
 				if ((count%2) == 0)
 				{
 					controller.ApplyAnimation(
 						((direction == TurnDirection.Left)
 							? controller.Animations.TurnToLeft
 							: controller.Animations.TurnToRight), controller.CrossfadeTimes.Turning);
-					//Debug.Log(String.Format("1st version of TurningAnimation.count: {0}", count));
+					
 				}
 				else
 				{
@@ -80,7 +80,7 @@ namespace GamePlay
 						((direction == TurnDirection.Left)
 							? controller.Animations.TurnToLeft1
 							: controller.Animations.TurnToRight1), controller.CrossfadeTimes.Turning);
-					//Debug.Log(String.Format("2ndst version of TurningAnimation.count: {0}", count));
+					
 				}
 
 			}
@@ -128,7 +128,7 @@ namespace GamePlay
 				}
 				else
 				{
-				   // Debug.Log("DisallowedTurningState");
+				   
 					controller.DisallowedTurnState.Direction = direction;
 					controller.SetState(controller.DisallowedTurnState);
 					controller.soundEffects.PlayClip(PlayerClip.DissalowedTurnSound);

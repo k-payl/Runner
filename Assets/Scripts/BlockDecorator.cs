@@ -18,7 +18,7 @@ public class BlockDecorator : MonoBehaviour
 		float lenghtZ = ZSize;
 	  for(int i = 0; i<=8; i++)
 	  {
-		  //if ( i == 2 || i == 3 || i == 6 || i==7)
+		  
 		  {
 			  start.x = center.x + lenghtX * Mathf.Pow(-1f, i);
 			  start.y = center.y + lenghtY * Mathf.Pow(-1f, i / 2);
@@ -37,16 +37,16 @@ public class BlockDecorator : MonoBehaviour
 		  
 	  }
 
-	  //  int STartInd = -1;
-	  //  for (int j = gameObject.name.Length - 1; j > 0; j--)
-	  //  {
-	  //	  if (Char.IsDigit(gameObject.name[j]) && !Char.IsDigit(gameObject.name[j-1]))
-	  //	  {
-	  //		  STartInd = j;
-	  //		  break;
-	  //	  }
-	  //  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 			
-	  //if (STartInd!=-1) Gizmos.DrawIcon(center + Vector3.right * ZSize, "labels\\" + gameObject.name.Substring(STartInd, 2) + ".png");
+	  
 	}
 }

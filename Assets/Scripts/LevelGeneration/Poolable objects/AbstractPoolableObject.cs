@@ -20,8 +20,8 @@ namespace LevelGeneration
 			if (controller == null) controller = Controller.GetInstance();
 			IsUsedNow = false;
 			
-			//делаем хэш для быстрого сравнения объетов
-			//как сумму кодов букв в имени типа
+			
+			
 			string nameType;nameType = GetType().Name;
 			for (int i = 0; i < nameType.Length; i++)
 			{
@@ -68,12 +68,12 @@ namespace LevelGeneration
 
 		public virtual bool Equals(AbstractPoolableObject other)
 		{
-		   // Debug.Log("AbstractPoolableObject: GetType().Name=" + GetType().Name + "GetType().GetHashCode=" + GetType().GetHashCode());
-		   // bool fastExit = this.GetGameObject.GetComponents<Component>().Length == other.GetGameObject.GetComponents<Component>().Length;
-		   //if (!fastExit)
-		   //   return false;
+		   
+		   
+		   
+		   
 
-			//Compare this object meshes
+			
 			MeshFilter xm = this.GetComponent<MeshFilter>();
 			MeshFilter ym = other.GetComponent<MeshFilter>();
 			if (xm == null ^ ym == null)
@@ -87,8 +87,8 @@ namespace LevelGeneration
 			}
 			
 
-			//meshes equals =>
-			//compare materials
+			
+			
 			bool hasRenderer1 = this.renderer !=null;
 			bool hasRenderer2 = other.renderer != null;
 			if (hasRenderer1 ^ hasRenderer2)
@@ -97,8 +97,8 @@ namespace LevelGeneration
 				if (other.renderer.sharedMaterial  != this.renderer.sharedMaterial);
 			
 			
-			//parents - Equals =>
-			//compare meshes childs
+			
+			
 			MeshFilter xm_c = this.GetComponentInChildren<MeshFilter>();
 			MeshFilter ym_c;
 			MeshFilter[] meshes = other.GetComponentsInChildren<MeshFilter>(true);
@@ -109,14 +109,14 @@ namespace LevelGeneration
 
 			if (xm_c == null && ym_c == null)
 			{
-				//Debug.Log("AbstractPoolableObject: child meshes are equals for "+gameObject.name+" and "+other.gameObject.name);
+				
 				return true;
 			}
 			if ((xm_c == null) ^ (ym_c == null))
 			{
 				/*
-			   // !!!!!
-			   //ошибка. в child почему то находит MeshFilter
+			   
+			   
 				if ((h < 5) && xm_c!=null)
 				{
 					GameObject kk = new GameObject {name = "generated_from_"+xm_c.name};
@@ -131,28 +131,28 @@ namespace LevelGeneration
 			}
 			
 			bool child_meshes_IsEquals = (xm_c.sharedMesh == ym_c.sharedMesh);
-		  //  if (!child_meshes_IsEquals) return false;
+		  
 
 
 		   return child_meshes_IsEquals;
 
-		   // //materials equals =>
-		   // //compare materials
-		   // hasRenderer1 = (this.GetComponentInChildren<Renderer>() != null);
-		   // Renderer[] renders = other.GetComponentsInChildren<Renderer>(true);
-		   // if (renders.Count() != null)
-		   //	 hasRenderer2 = true;
-		   // else
-		   //	 hasRenderer2 = null;
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
 
-		   // hasRenderer2 = other.GetComponentInChildren<Renderer>();
-		   // if (hasRenderer1 ^ hasRenderer2)
-		   //	 return false;
-		   // if (!hasRenderer1 && !hasRenderer2)
-		   //	 return true;
+		   
+		   
+		   
+		   
+		   
 
-		   // return (this.GetComponentInChildren<Renderer>().sharedMaterial ==
-		   //			 other.GetComponentInChildren<Renderer>().sharedMaterial);
+		   
+		   
 
 		   
 

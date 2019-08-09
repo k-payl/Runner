@@ -106,17 +106,17 @@ namespace LevelGeneration
 
 		}
 
-			//public static Vector3 GetWorldScale( Transform transform )
-			//{ 
-			//	Vector3 worldScale = transform.localScale; 
-			//	Transform parent = transform.parent;  
-			//	while ( parent != null )
-			//	{					  
-			//		worldScale = Vector3.Scale(worldScale, parent.localScale); 
-			//		parent = parent.parent;	 
-			//	}			
-			//	return worldScale; 
-			//}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 #if UNITY_EDITOR
 		void OnDrawGizmos()

@@ -81,18 +81,18 @@ namespace LevelGeneration
 			 {
 				 ISerializator[] serializators = GetComponents<MonoBehaviour>().OfType<ISerializator>().ToArray();
 				 
-				 //int i = 0; 
-				 //Stopwatch stopwatch = new Stopwatch();
-				 //TimeSpan time = new TimeSpan(0,0,0,0,0);
+				 
+				 
+				 
 				 foreach (ISerializator serializedGameObject in serializators)
 				 {
-					 //i++;
-					 //stopwatch.Start();
+					 
+					 
 					 IPoolable poolable = serializedGameObject.DeserializeForRuntime();
-					 //stopwatch.Stop();
-					 //time = time + stopwatch.Elapsed;
-					 //UnityEngine.Debug.Log("Time of one search: " + stopwatch.Elapsed+". (sum:"+time+")");
-					 //stopwatch.Reset();
+					 
+					 
+					 
+					 
 
 					 if (poolable != null)
 					 {
@@ -106,12 +106,12 @@ namespace LevelGeneration
 						 Debug.Log("TrackChunk.ActivateTrackCHunk(): null poolable in serializator " + serializedGameObject.GetType());
 					 }
 				 }
-				 //if (i > 1)
-				 //{
-				 //	TimeSpan result = TimeSpan.FromTicks(time.Ticks/i);
-				 //	Debug.Log("Average:" + result);
-				 //}
-				 //Debug.Log("TrackChunk "+gameObject.name +" activated");
+				 
+				 
+				 
+				 
+				 
+				 
 			 }
 			activated = true;
 		}
@@ -136,27 +136,27 @@ namespace LevelGeneration
 		}
 
 #if UNITY_EDITOR
-	//	private bool foldout = false;
+	
 		public void OnGUI()
 		{
-			//if (serializedPooalables!=null && serializedPooalables.Count > 0)
-			//{
-			//	foldout = UnityEditor.EditorGUILayout.Foldout(foldout, startPosition.ToString());
-			//	if(foldout)
-			//	{
-			//		foreach(var serializedGameObject in serializedPooalables)
-			//		{
-			//			UnityEditor.EditorGUILayout.BeginHorizontal();
-			//			GUILayout.Label(" ");
-			//			serializedGameObject.OnGUI();
-			//			UnityEditor.EditorGUILayout.EndHorizontal();
-			//		}
-			//	}
-			//}
-			//else
-			//{
-			//	GUILayout.Label(startPosition.ToString());
-			//}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 
 #endif

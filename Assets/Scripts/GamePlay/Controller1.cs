@@ -9,13 +9,13 @@ namespace GamePlay
 	public partial class Controller : MonoBehaviour, IControllerForCamera, IAttackable
 	{
 
-		/// <summary>
-		/// ПОдготоваливает игрока к новому забегу. 
-		/// Положение нужно устанавливать в другом мсете.(сделано в GameManager)
-		/// </summary>
+		
+		
+		
+		
 		public void PrepareToReplay()
 		{
-			//оружие
+			
 			if (WrenchInHand != null) WrenchInHand.enabled = false;
 			if (ShieldIn != null) ShieldIn.enabled = false;
 			if (ShieldOut != null) ShieldOut.enabled = false;
@@ -45,7 +45,7 @@ namespace GamePlay
 
 
 
-		//----------IAttackable-------------------
+		
 
 		public void Attack(IAttackable target, WeaponType weaponType)
 		{

@@ -3,14 +3,14 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-/// <summary>
-/// Скрипт для вращения объекта
-/// </summary>
+
+
+
 public class Rotator : MonoBehaviour
 {
 	public int axis;
 	public float period;
-	public int direction;// -1 -право.  1 - лево
+	public int direction;
 	public bool randomize;
 	private bool activated;
 	private Transform _transform;
@@ -24,7 +24,7 @@ public class Rotator : MonoBehaviour
 		if (!activated)
 		{
 
-			//если надо, то рандомим начальное положение
+			
 			if (randomize)
 			{
 				switch (axis)
@@ -49,7 +49,7 @@ public class Rotator : MonoBehaviour
 
 	void Start()
 	{
-	   // if (gameObject.name == "FCMF_ventilator") Debug.Log("axis=" + axis + "; period=" + period + "; direction=" + direction);
+	   
 		_transform = transform;
 		timeCorrection = 380f;
 		Activate();
@@ -64,7 +64,7 @@ public class Rotator : MonoBehaviour
 				if (period <float.Epsilon)
 				{
 					period = 2;
-					//Debug.Log("set period=2");
+					
 				}
 				switch (axis)
 				{
@@ -78,12 +78,12 @@ public class Rotator : MonoBehaviour
 						rotateVector = Vector3.forward*Time.deltaTime*direction*timeCorrection/period;
 						break;
 				}
-				//if (gameObject.name == "FCMF_ventilator")
-				//{
-				//	Debug.Log("axis=" + axis + "; period=" + period + "; direction=" + direction + "; timeCorrection=" + timeCorrection + "rotateVector=" + rotateVector);
-				//}
-				//if (gameObject.name == "FCMF_ventilator") Debug.Log("rotateVector="+rotateVector);
-				//if (rotateVector.x != float.NaN && rotateVector.y != float.NaN && rotateVector.z != float.NaN)
+				
+				
+				
+				
+				
+				
 					_transform.Rotate(rotateVector, Space.World);
 				
 			}
@@ -97,9 +97,9 @@ public class Rotator : MonoBehaviour
 
 #if UNITY_EDITOR
 
-	/// <summary>
-	/// Интерфейс для RoatatorEditor
-	/// </summary>
+	
+	
+	
 	public int Direction
 	{
 		get { if (direction == -1) return 0; else return 1; }

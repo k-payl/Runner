@@ -16,9 +16,9 @@ namespace Sound
 	}
 
 
-	/// <summary>
-	/// Этому классу делегирована обработка звуков от игрока
-	/// </summary>
+	
+	
+	
 	public class PlayerSoundHandler : MonoBehaviour
 	{
 		public AudioSource audioSource;
@@ -98,7 +98,7 @@ namespace Sound
 							audioSource.clip = JumpRunClip;
 							break;
 						case PlayerClip.JumpUpSound:
-							//рандомим
+							
 							audioSource.clip =  SoundUtils.getRandomAudioClip(JumpUpClips);
 							break;
 						case PlayerClip.ShieldSound:

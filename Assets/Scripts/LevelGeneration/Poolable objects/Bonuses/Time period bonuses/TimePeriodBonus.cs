@@ -18,7 +18,7 @@ namespace LevelGeneration
 			isCollected = true;
 			startTime = Time.time;
 			FirstEffect();
-			//Debug.Log("Time period bonus collected");
+			
 		}
 
 		public override void ResetState()
@@ -28,7 +28,7 @@ namespace LevelGeneration
 				isCollected = false;
 				LastEffect();
 				base.ResetState();
-				//Debug.Log("Time period bonus is removed");
+				
 			}
 		}
 
@@ -42,20 +42,20 @@ namespace LevelGeneration
 			return true;
 		}
 
-		/// <summary>
-		/// собственно, полезное действие бонуса.вызывается кем-нибудь на протяжении некторого времени
-		/// </summary>
+		
+		
+		
 		public abstract void Affect();
 		
-		/// <summary>
-		/// применяет некое действие в самом конце дейиствия бонуса
-		/// вызывается один раз
-		/// </summary>
+		
+		
+		
+		
 		protected abstract void LastEffect();
 
-		/// <summary>
-		/// инициализация бонуса. вызывается в начале один раз
-		/// </summary>
+		
+		
+		
 		protected abstract void FirstEffect();
 
 	}

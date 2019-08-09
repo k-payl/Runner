@@ -7,9 +7,9 @@ namespace GamePlay
 {
 	public enum AttackType
 	{
-		//меч
+		
 		Sword = 0,
-		//щит
+		
 		Shield = 1
 	}
 
@@ -43,11 +43,11 @@ namespace GamePlay
 		{
 			verticalSpeed = 0;
 			result = Vector3.zero;
-			//result = base.UpdatePosition();
+			
 			currentTime = Time.time - startTime;
 			horizontalAcceleration=controller.ControllerParams.AttackAcceleration.Evaluate(currentTime/maxTime);			 
 
-			//Debug.Log(string.Format("currentTime={0}, maxTime={1}", currentTime, maxTime));
+			
 			if(currentTime > maxTime)
 			{
 				horizontalAcceleration = 0f;
@@ -72,12 +72,12 @@ namespace GamePlay
 				{
 					ApplyLastState(Controller.SavedStates.GetLastState());
 				}
-				//crossfade starts here
+				
 				controller.ApplyAnimation(controller.Animations.Run, controller.CrossfadeTimes.AttackRun);
 			}
 			else
 			{
-				//Debug.Log("controller.ControllerParams.RunSpeed="+controller.ControllerParams.RunSpeed+ " ,horizontalAcceleration=" + horizontalAcceleration);
+				
 				result.z = controller.ControllerParams.RunSpeed + horizontalAcceleration;
 				PlayAnimation();
 			}
@@ -91,14 +91,14 @@ namespace GamePlay
 		public override void Jump()
 		{
 			Controller.SavedStates.PutState(controller.JumpingState);
-			//verticalSpeed = controller.ControllerParams.JumpVerticalSpeed;
-			//controller.SetState(controller.JumpingState);
+			
+			
 		}
 		public override void Jump( float startSpeedY )
 		{
 			if (!wasInAirWhenAttacked)
 			{
-				//TODO do with startSpeedY
+				
 				Controller.SavedStates.PutState(controller.JumpingState);
 			}
 		}
@@ -141,12 +141,12 @@ namespace GamePlay
 		}
 
 
-		//protected void ReciveDamage(int damageValue)
-		//{
-		//	hitPoints -= damageValue;
-		//	if(hitPoints<=0)
-		//		Die();
-		//}
+		
+		
+		
+		
+		
+		
 
 
 		protected override void ApplyLastState( BaseState state )

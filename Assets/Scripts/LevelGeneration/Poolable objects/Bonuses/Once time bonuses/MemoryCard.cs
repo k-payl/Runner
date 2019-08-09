@@ -6,9 +6,9 @@ namespace LevelGeneration
 {
 
 	public class MemoryCard : OnceTimeBonus{
-		//protected override void ApplyEffect()
-		//{
-		//	GameManager.Instance.bonuses.hasMemoryCard = true;
-		//}
+		
+		
+		
+		
 	}
 }

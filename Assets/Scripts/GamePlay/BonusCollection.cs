@@ -10,9 +10,9 @@ namespace GamePlay
 	public class BonusCollection
 	{
 		public int score; 
-		public bool hasHalfBattery; //включается, если кончился заряд батареи. 
-		//Пополняет заряд до середины. На следующий уровень не переносится. 
-		public bool hasMemoryCard; //открывает арты 
+		public bool hasHalfBattery; 
+		
+		public bool hasMemoryCard; 
 		public bool hasCoinMultiplier; 
 		[SerializeField]private float batareyCharge;
 
@@ -45,10 +45,10 @@ namespace GamePlay
 			}
 		}
 
-		/// <summary>
-		/// Конструктор
-		/// По умолчанию score = 0
-		/// </summary>
+		
+		
+		
+		
 		public BonusCollection()
 		{
 			score = 0;
@@ -81,12 +81,12 @@ namespace GamePlay
 			if (hasCoinMultiplier)
 			{
 				score += value * 2;
-				//Debug.Log("+" + 2 * value + " to score. Score: " + score);
+				
 			}
 			else
 			{
 				score += value;
-				//Debug.Log("+" + value + " to score. Score: " + score);
+				
 			}
 		}
 

@@ -17,23 +17,23 @@ namespace Serialization
 		[SerializeField] protected Vector3 position;
 		[SerializeField] protected Quaternion rotation;
 		[SerializeField] protected string originalName;
-		[SerializeField] protected int line;//For Positioning
+		[SerializeField] protected int line;
 
 		public virtual IPoolable DeserializeForRuntime()
 		{
 			IPoolable poolable = null;
-			//TODO удалить эту проверку
-			//if (prefab.GetComponent<AbstractPoolableObject>() == null)
-			//	Debug.LogError("prefab " + prefab.name + " has no AbstractPoolableObject");
-			//else
-			//{
+			
+			
+			
+			
+			
 
 				poolable = GameManager.Instance.Pool.GetObject(prefab.GetComponent<AbstractPoolableObject>());
 				poolable.IsUsedNow = true;
 				poolable.GetGameObject.transform.position = position;
 				poolable.GetGameObject.transform.rotation = rotation;
-				//Debug.Log(GameManager.Instance.Pool.Info());
-			//}
+				
+			
 			return poolable;
 		}
 #if UNITY_EDITOR

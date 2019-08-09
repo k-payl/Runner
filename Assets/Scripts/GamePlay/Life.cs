@@ -2,13 +2,13 @@ using GamePlay;
 
 namespace GamePlay
 {
-	/// <summary>
-	/// ƒелегирована жизнь игрока
-	/// </summary>
+	
+	
+	
 	public class Life  {
 
 		public int maxHP = 3;
-		public int HP; //TODO do private
+		public int HP; 
 	
 
 		public Life()
@@ -24,11 +24,11 @@ namespace GamePlay
 			Controller.GetInstance().EventLifeChanged(this);
 		}
 
-		/// <summary>
-		/// ”величить жизнь
-		/// </summary>
-		/// <returns>true - если прибавление не вышло за границы\n
-		/// false - если прибавл€ем больше чем нужно</returns>
+		
+		
+		
+		
+		
 		public bool IncreaseHP(int hp)
 		{
 			if (HP == maxHP) return false;
@@ -49,9 +49,9 @@ namespace GamePlay
 
 		}
 
-		/// <summary>
-		/// ¬осстановить здоровье
-		/// </summary>
+		
+		
+		
 		public void RestoreHP()
 		{
 			if (HP != maxHP)

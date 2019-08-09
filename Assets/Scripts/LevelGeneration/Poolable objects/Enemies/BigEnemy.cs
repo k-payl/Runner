@@ -32,7 +32,7 @@ namespace LevelGeneration
 		{
 			if (live && (Time.time - startTime) <= timeOfDamage && ShieldStrikeIsDone)
 			{
-				//linear law; it depends of max of Controller.GetInstance().ControllerParams.AttackAcceleration 
+				
 				_transform.Translate(Vector3.forward * (1f - (Time.time - startTime) / timeOfDamage) * Time.deltaTime * magicKoeff);
 			}
 				
@@ -70,7 +70,7 @@ namespace LevelGeneration
 		{
 			if (!ShieldStrikeIsDone)
 			{
-				//≈ще удар
+				
 				ShieldStrikeIsDone = true;
 				startTime = Time.time;
 				ShowDamageEffect();
@@ -79,7 +79,7 @@ namespace LevelGeneration
 			}
 			else
 			{
-				//удар по игроку
+				
 				AttackEffect();
 			}
 		}

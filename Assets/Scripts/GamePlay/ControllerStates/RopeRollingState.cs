@@ -30,7 +30,7 @@ namespace GamePlay
 			Vector3 result = new Vector3(x, rope.CalculateYByZ(handPosition.z + dz), handPosition.z + dz);
 			if ( handPosition.z < rope.MinZcoord() )
 			{
-				//TODO Change this anim
+				
 				controller.ApplyAnimation(controller.Animations.JumpUp[0], controller.CrossfadeTimes.JumpingUp);
 				moveVector =  new Vector3(0f, 0f, speed*0.8f);
 			}
@@ -39,7 +39,7 @@ namespace GamePlay
 				Jump(1f);
 			}
 			else
-			{  //TODO Change this anim
+			{  
 				controller.ApplyAnimation(controller.Animations.JumpUp[0], controller.CrossfadeTimes.JumpingUp);
 				moveVector = (result - handPosition) * speed;
 			}
@@ -47,7 +47,7 @@ namespace GamePlay
 						
 			rope.TrySetKnotPosition(handPosition);
 
-			//Debug.Log(string.Format("handPosition: {0}, {1}, {2}", handPosition.x, handPosition.y, handPosition.z));
+			
 			Debug.DrawLine(handPosition, handPosition + moveVector * 0.3f, Color.red, 0.01f);
 
 			return moveVector;

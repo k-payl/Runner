@@ -41,16 +41,16 @@ namespace GamePlay
 	public class ControllerParams
 	{
 		public float RunSpeed;
-		public float RunAnimationSpeed = 1f;//TODO убрать перед билдом
+		public float RunAnimationSpeed = 1f;
 		public float JumpHeight;
 		[HideInInspector] public float JumpVerticalSpeed;
-		public float JumpUpAnimationSpeed;//TODO убрать перед билдом
-		public float JumpDownAnimationSpeed;//TODO убрать перед билдом
+		public float JumpUpAnimationSpeed;
+		public float JumpDownAnimationSpeed;
 		public float TurningSpeed;
 		public float RopeRollingSpeed;
 		
 		public AnimationCurve TurningCurve;
-		public float TurningAnimationSpeed;//TODO убрать перед билдом
+		public float TurningAnimationSpeed;
 		public AnimationCurve AttackAcceleration;
 		public float ShieldAttackTime=1f;
 		public float SwordAttackTime = 1f;
@@ -102,10 +102,10 @@ namespace GamePlay
 	#endregion
 
 
-	/// <summary>
-	/// Отвечает за состояние игрока.
-	/// Паттерн состояния
-	/// </summary>
+	
+	
+	
+	
 	[RequireComponent(typeof(CharacterController))]
 	public partial class Controller : MonoBehaviour, IControllerForCamera, IAttackable
 	{
@@ -128,7 +128,7 @@ namespace GamePlay
 		public float MaxFlireBrightness;
 		public float timeFlareAction;
 		public float timeFlaresCrossfade;
-		public Life life; //делегировано все что отвечает за жизнь
+		public Life life; 
 
 		public event LifeChanged LifeChanged;
 
@@ -249,7 +249,7 @@ namespace GamePlay
 
 			foreach ( TimePeriodBonus bonus in forDeleteList )
 			{
-				//событие
+				
 				GameManager.Instance.BonusMissedEvent(bonus, GameManager.Instance.info.bonuses);
 
 				timePeriodBonuses.Remove(bonus);
@@ -297,14 +297,14 @@ namespace GamePlay
 			}
 		}
 
-		//TODO удалить если не будет использована
-		//public void ApplyAnimationQueued(AnimationClip clip, float crossfadeTime)
-		//{
-		//	  if (clip != null)
-		//	  {
-		//		  _animation.CrossFadeQueued(clip.name, crossfadeTime);
-		//	  }
-		//}
+		
+		
+		
+		
+		
+		
+		
+		
 
 		public bool IsOnGround()
 		{
@@ -319,7 +319,7 @@ namespace GamePlay
 
 		private bool CalcStameredState()
 		{
-				//boottom point is picked up under ground at dxHeight 
+				
 				float dxHeight = 0.1f;
 				Vector3 bottomPoint = new Vector3(characterController.bounds.center.x,
 												  characterController.bounds.min.y + dxHeight,
@@ -328,13 +328,13 @@ namespace GamePlay
 				Vector3 middlePoint = new Vector3(characterController.bounds.center.x,
 												  characterController.bounds.center.y - 0.2f,
 												  characterController.bounds.center.z);
-				float distance = 0.7f;//(characterController.bounds.max.x - characterController.bounds.min.x);
+				float distance = 0.7f;
 
-				//Debug.DrawLine(bottomPoint, bottomPoint + _transform.forward * distance,
-				//				 Color.yellow, duration);
-				//Debug.DrawLine(middlePoint, middlePoint + _transform.forward * distance,
-				//				 Color.red, duration);
-				//Debug.Log(string.Format("bottom: {0}, middle: {1}", Physics.Raycast(bottomPoint, _transform.forward, distance), Physics.Raycast(middlePoint, _transform.forward, distance)));
+				
+				
+				
+				
+				
 
 				return
 					Physics.Raycast(bottomPoint, _transform.forward, distance,

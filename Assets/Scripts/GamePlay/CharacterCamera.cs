@@ -36,8 +36,8 @@ public class CharacterCamera : MonoBehaviour
 		if (!target && characterController != null)
 		{
 			target = characterController.GetTransform();
-			//смещение
-			//offsetRotate = Quaternion.AngleAxis(-20, Vector3.right);
+			
+			
 		}
 
 	}
@@ -52,7 +52,7 @@ public class CharacterCamera : MonoBehaviour
 		if(!target) return;
 
 		Vector3 newPos = Vector3.zero;
-		//Quaternion newRoate = Quaternion.identity;
+		
 
 		newPos.x = target.position.x;
 
@@ -60,17 +60,17 @@ public class CharacterCamera : MonoBehaviour
 		{
 			newPos.y = Height + target.position.y ;
 			lastOnGroundHeight = target.position.y;
-			//newRoate = Quaternion.identity;
+			
 		}
 		else
 		{
 			newPos.y = Height + lastOnGroundHeight;
-			//Vector3 direction = Vector3.Normalize(target.transform.position - _transform.position);
-			//Debug.Log(direction.y);
-			//if (direction.y < -0.4f)
-			//	newRoate = Quaternion.LookRotation(target.transform.position - _transform.position, Vector3.up) * offsetRotate;
-			//else
-			//	newRoate = Quaternion.identity;
+			
+			
+			
+			
+			
+			
 		}
 		newPos.z = target.position.z - Distance;
 
@@ -80,9 +80,9 @@ public class CharacterCamera : MonoBehaviour
 			shakeIntenivity -= Time.deltaTime;
 		}
 
-		//лерпить из старого положения в новое
+		
 		_transform.position = Vector3.Lerp(_transform.position, newPos, Smooth*Time.deltaTime);
-		//transform.rotation = Quaternion.Slerp(_transform.rotation, newRoate, Time.deltaTime * 4.0f);  
+		
 
 
 	}

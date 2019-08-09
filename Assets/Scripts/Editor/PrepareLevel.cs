@@ -10,7 +10,7 @@ public class PrepareLevel : EditorWindow
 
 	[MenuItem ("Window/Save level")]
 	static void Init () {
-		// Get existing open window or if none, make a new one:
+		
 		GetWindow<PrepareLevel>(false, "Save level");
 	}
 

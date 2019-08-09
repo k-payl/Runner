@@ -7,10 +7,10 @@ using UnityEngine;
 namespace Gameplay
 {
 
-	/// <summary>
-	/// Очередь (для данной задачи "отложенных") состояний.
-	/// Можно положить\взять состояние.
-	/// </summary>
+	
+	
+	
+	
 	public class StatesQueue
 	{
 		public float stateLifeTime;
@@ -30,10 +30,10 @@ namespace Gameplay
 			}
 		}
 
-		/// <summary>
-		/// </summary>
-		/// <param name="_maxStateCount">максимальное количество состояний в очереди</param>
-		/// <param name="stateLifeTimeInQueue">максимальное время жизни одного сосотояния</param>
+		
+		
+		
+		
 		public StatesQueue(int _maxStateCount = 1, float stateLifeTimeInQueue = 1f)
 		{
 			states = new Queue<TemporaryState>(_maxStateCount);
@@ -73,20 +73,20 @@ namespace Gameplay
 		public void PutState(BaseState newState)
 		{
 			int countValidStates = 0;
-			// Ищем, сколько непросроченных состояний в очереди
+			
 			foreach (TemporaryState one in states)
 			{
 				if ((Time.time - one.startTime) < stateLifeTime) countValidStates++;
 			}
 
-			//если еще можно добавить сосотояние
+			
 			if (countValidStates < maxStates)
 			{
 				
 				TemporaryState containerNewState = new TemporaryState(newState, Time.time);
 				bool existSameState = false;
 				float timeOfExistedSame = 0f;
-				// поиск такого же состояния в очереди
+				
 				foreach (TemporaryState one in states)
 				{
 					if (one.state.Equals(newState))
@@ -97,8 +97,8 @@ namespace Gameplay
 					}
 				}
 
-				// если существует такое же но просроченое состояние ИЛИ не существует такого же сосотояния,
-				// то вставить 
+				
+				
 				if ((existSameState && (timeOfExistedSame > stateLifeTime)) || !existSameState)
 					states.Enqueue(containerNewState); 
 			}

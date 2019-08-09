@@ -2,9 +2,9 @@ using UnityEditor;
 using UnityEngine;
 using System;
 
-/// <summary>
-/// Creates a popup list with the provided values.
-/// </summary>
+
+
+
 
 [CustomPropertyDrawer(typeof(PopupAttribute))]
 public class PopupDrawer : PropertyDrawer
@@ -14,7 +14,7 @@ public class PopupDrawer : PropertyDrawer
 
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
-		// Checks to see what is the Type of the provided values and acts accordingly.
+		
 		if (Equals(popupAttribute.variableType, typeof(int[])))
 		{
 			EditorGUI.BeginChangeCheck();
@@ -27,7 +27,7 @@ public class PopupDrawer : PropertyDrawer
 		else if (Equals(popupAttribute.variableType, typeof(float[])))
 		{
 			EditorGUI.BeginChangeCheck();
-			// Checks all items in the provided list, to see if any of them is a match with the property value, if so assigns that value to the index.
+			
 			for (int i = 0; i < popupAttribute.list.Length; i++)
 			{
 				if (Math.Abs(property.floatValue - Convert.ToSingle(popupAttribute.list[i])) < float.Epsilon)
@@ -44,7 +44,7 @@ public class PopupDrawer : PropertyDrawer
 		else if (Equals(popupAttribute.variableType, typeof(string[])))
 		{
 			EditorGUI.BeginChangeCheck();
-			// Checks all items in the provided list, to see if any of them is a match with the property value, if so assigns that value to the index.
+			
 			for (int i = 0; i < popupAttribute.list.Length; i++)
 			{
 				if (property.stringValue == popupAttribute.list[i])

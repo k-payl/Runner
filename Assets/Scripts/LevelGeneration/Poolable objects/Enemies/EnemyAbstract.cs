@@ -20,7 +20,7 @@ namespace LevelGeneration
 		private float timeOfDeath;
 		private AudioSource audioSource;
 
-		//------------IAttackble-------------
+		
 		public abstract void Attack( IAttackable target, WeaponType weaponType ); 
 		
 		public abstract void ReciveDamage( WeaponType weaponType );
@@ -30,7 +30,7 @@ namespace LevelGeneration
 			live = false;
 			DieEffect();
 		}
-		//-----------------------------------
+		
 
 
 

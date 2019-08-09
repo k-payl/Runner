@@ -12,7 +12,7 @@ namespace LevelGeneration
 		 [HideInInspector]
 		public int LineNumber;
 
-		//должен быть Track
+		
 		protected static TrackAbstract track;
 		public virtual void OnEnable()
 		{

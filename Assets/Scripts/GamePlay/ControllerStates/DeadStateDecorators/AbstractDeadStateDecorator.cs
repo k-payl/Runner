@@ -8,7 +8,7 @@ namespace GamePlay
 		protected float horizontSpeed;
 		protected byte bounceCount = 0;
 		private bool AnimationIsPlayed = false;
-		private float stopWatch; //финиш при <=0
+		private float stopWatch; 
 	  
 		public AbstractDeadStateDecorator(Controller controller, DeadReason reason, TurnDirection direction = TurnDirection.None) : base(controller)
 		{
@@ -27,18 +27,18 @@ namespace GamePlay
 		}
 		public override Vector3 UpdatePosition()
 		{
-		  //  if (Mathf.Abs(controller.GetComponent<CharacterController>().center.y - controllerColliderDeadHeight) > 0.1f)
-		  //	  controller.GetComponent<CharacterController>().center += new Vector3(0f, Time.deltaTime * 10, 0f);
+		  
+		  
 			result = Vector3.zero;
 
-			//конечная анимация
+			
 			if (bounceCount > 0 && !AnimationIsPlayed)
 			{
 				PlayFinishAnimation();
 				AnimationIsPlayed = true;
 			}
 
-			//отсчет до финишного диалога
+			
 			if (AnimationIsPlayed && stopWatch > 0)
 			{
 				stopWatch -= Time.deltaTime;
@@ -46,8 +46,8 @@ namespace GamePlay
 
 			if (stopWatch <= 0)
 			{
-				//END
-				//TOD сделать один раз
+				
+				
 				
 			}
 

@@ -23,17 +23,17 @@ namespace GamePlay
 			set{}
 		}
 
-		/// <summary>
-		/// </summary>
-		/// <returns>Возвращает максимальную точку x в мировых координатах</returns>
+		
+		
+		
 		public override float MaxX()
 		{
 			return _transform.TransformPoint(_collider.center.x + width/2, _collider.center.y, _collider.center.z).x;
 		}
 
-		/// <summary>
-		/// </summary>
-		/// <returns>Возвращает минимальную точку x в мировых координатах</returns>
+		
+		
+		
 		public override float MinX()
 		{
 			return _transform.TransformPoint(_collider.center.x - width/2, _collider.center.y, _collider.center.z).x;

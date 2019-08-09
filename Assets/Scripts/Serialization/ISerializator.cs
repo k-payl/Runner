@@ -9,7 +9,7 @@ namespace Serialization
 #if UNITY_EDITOR
 		void Serialize( IPoolable poolable );
 		IPoolable DeserializeForEditor();
-	   // void OnGUI();
+	   
 #endif
 	}
 

@@ -8,6 +8,6 @@ namespace LevelGeneration
 	interface ICollectable
 	{
 		void Collect();
-		//void Remove();
+		
 	}
 }

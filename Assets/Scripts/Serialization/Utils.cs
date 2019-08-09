@@ -28,7 +28,7 @@ namespace Serialization
 						go = PrefabUtility.GetPrefabParent(poolable.GetGameObject) as GameObject;
 						break;
 
-						//скорее всего из Meshes(автоматические префабы)
+						
 					case PrefabType.ModelPrefabInstance:
 						go = TryToFindAlreadyExistsPrefab(poolable.GetGameObject) as GameObject ?? 
 							PrefabUtility.CreatePrefab(
@@ -44,7 +44,7 @@ namespace Serialization
 							poolable.GetGameObject);
 						break;
 					 
-						//скорее всего добалены новые компоненты
+						
 					case PrefabType.DisconnectedPrefabInstance:
 						PrefabUtility.CreatePrefab(
 							"Assets/Prefabs/System/AfterSerializationCreatedPrefabs/WithSomeChanges/" + poolable.GetGameObject.name + "(withChanges).prefab",
@@ -87,7 +87,7 @@ namespace Serialization
 				}
 			}
 			msg += "; return null";
-	   //	 Debug.Log(msg);
+	   
 			return null;
 		}
 		 

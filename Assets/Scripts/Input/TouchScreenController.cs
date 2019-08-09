@@ -9,7 +9,7 @@ public class TouchScreenController : MonoBehaviour {
 	{
 		Player = Controller.GetInstance();
 	}
-	// Subscribe to events
+	
 	void OnEnable()
 	{
 		EasyTouch.On_Swipe += OnSwipeHandler;

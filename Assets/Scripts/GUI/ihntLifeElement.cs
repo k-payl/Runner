@@ -19,7 +19,7 @@ public class ihntLifeElement : MonoBehaviour
 
 	private void HandleChangingLife(Life life)
 	{
-		//Debug.Log("ihntLifeElement.HandleChangingLife(): HP=" + life.HP); 
+		
 			for (int i = 0; i < lifeItems.Count; i++)
 			{
 				if (i < life.HP) lifeItems[i].Show();

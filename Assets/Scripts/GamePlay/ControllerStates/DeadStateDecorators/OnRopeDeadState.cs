@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace GamePlay
 {
-	//TODO implemet all
+	
 	class OnRopeDeadState : AbstractDeadStateDecorator
 	{
 		public OnRopeDeadState(Controller controller) : base(controller, DeadReason.OnRope)
@@ -11,7 +11,7 @@ namespace GamePlay
 		}
 		protected override float CalcZSpeed()
 		{
-			//TODO: переопределить
+			
 			return base.CalcZSpeed();
 		}
 		protected override void PlayFinishAnimation()

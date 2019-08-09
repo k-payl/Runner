@@ -11,27 +11,27 @@ public class ihntGUI : Singleton<ihntGUI>
 	public ihntPanelBase lastDialogGUI;
 	public dfLanguageManager languageManager;
 
-	//#region Instance
+	
 
-	//private static ihntGUI instance;
+	
 
-	//public static ihntGUI Instance
-	//{
-	//	get
-	//	{
-	//		if (instance == null)
-	//			instance = FindObjectOfType(typeof (ihntGUI)) as ihntGUI;
-	//		if (instance == null)
-	//		{
-	//			instance = new GameObject("GUIManager").AddComponent<ihntGUI>();
-	//			Debug.Log("ihntGUI new created");
-	//			DontDestroyOnLoad(instance.gameObject);
-	//		}
-	//		return instance;
-	//	}
-	//}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-	//#endregion
+	
 
 	protected override void Awake()
 	{
@@ -49,10 +49,10 @@ public class ihntGUI : Singleton<ihntGUI>
 		if (ingameGUI!=null) ingameGUI.Hide();
 	}
 
-	/// <summary>
-	/// Показывает диалог в конце левела
-	/// </summary>
-	/// <param name="title">имя левела</param>
+	
+	
+	
+	
 	public void ShowEndLevelDialog(string title)
 	{
 		if (endLevelGUI!=null) 
@@ -69,7 +69,7 @@ public class ihntGUI : Singleton<ihntGUI>
 
 	public void ShowGameOverGUI(string title)
 	{
-		//TODO with title
+		
 		if (gameOverGUI!=null)
 			gameOverGUI.Show();
 	}

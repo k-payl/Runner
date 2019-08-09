@@ -45,22 +45,22 @@ namespace Sound
 		public AudioClip CrazyBattery;
 		public AudioClip Magnet;
 
-		//#region Instance
-		//private static BonusSoundHandler instance;
-		//public static BonusSoundHandler GetInstance()
-		//{
-		//	return instance ?? (instance = FindObjectOfType(typeof(BonusSoundHandler)) as BonusSoundHandler);
-		//}
+		
+		
+		
+		
+		
+		
 
-		//private void Start()
-		//{
-		//	instance = this;
-		//	if (!audioSource && audio)
-		//		audioSource = audio;
-		//	if (!audioSource)
-		//		audioSource = GetComponentInChildren<AudioSource>();
-		//}
-		//#endregion
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		void Start()
 		{

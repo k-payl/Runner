@@ -12,13 +12,13 @@ public class ihntPanelEndLevel : ihntPanelBase
 	protected override void Start()
 	{
 		base.Start();
-		//TODO multilang
-		//if (title!=null) title.Text = 
+		
+		
 	}
 
 	public void SetLevelRepresentation(string levelRepresentation)
 	{
-		//TODO multilang
+		
 		if (title != null)
 		{
 			title.Text = word1 + " " + levelRepresentation + " " + word2+"!";

@@ -56,15 +56,15 @@ namespace LevelGeneration
 				Pieces[i].renderer.enabled = true;
 				Pieces[i].AddExplosionForce(exploseValue,transform.position +Vector3.back*zFacorOfForce,exploseRadius,1f,ForceMode);
 				if (useTorque) Pieces[i].AddRelativeTorque(new Vector3(Random.Range(-3f,3f), Random.Range(-2f,2f), Random.Range(-10f,10f)), ForceMode);
-				//Pieces[i].AddTorque(Vector3.up * 10f);
+				
 			}
 
 		}
 
-		//void OnTriggerEnter(Collider other)
-		//{
-		//	Destroy();
-		//}
+		
+		
+		
+		
 
 
 	 

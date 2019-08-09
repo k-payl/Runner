@@ -11,7 +11,7 @@ namespace LevelGeneration
 		protected override void Awake()
 		{
 			base.Awake();
-		//	collider.isTrigger = true;
+		
 		}
 		void OnDrawGizmos()
 		{

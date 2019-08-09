@@ -22,7 +22,7 @@ namespace Loading
 		public override void Execute()
 		{
 			
-			//Application.LoadLevel(LevelName);
+			
 			
 			GameObject b = new GameObject{name = "Coroutine_loading"};
 			MonoBehaviour objMonoBehaviour = b.AddComponent<Empty>();

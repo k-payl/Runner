@@ -7,11 +7,11 @@ namespace LevelGeneration
 
 	public abstract class Bonus : AbstractPoolableObject, ICollectable
 	{
-		//protected static Vector3 defaultPosition = new Vector3(-50f, -100f, -100f);
+		
 
-		/// <summary>
-		/// Сигнал бонусу что его собрали
-		/// </summary>
+		
+		
+		
 		public virtual void Collect()
 		{
 			if ( collider )

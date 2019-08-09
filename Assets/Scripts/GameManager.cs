@@ -7,11 +7,11 @@ using LevelGeneration;
 using Serialization;
 using UnityEngine;
 
-	/// <summary>
-	/// Объект этого класса - единственный, который сохраняется между загрузками сцен
-	/// </summary>
-	//[ExecuteInEditMode]
-	public class GameManager : Singleton<GameManager> //Singletone
+	
+	
+	
+	
+	public class GameManager : Singleton<GameManager> 
 	{
 		public TrackChunkManager trackChunkManager;
 		public Pool<AbstractPoolableObject> Pool;
@@ -23,24 +23,24 @@ using UnityEngine;
   
 
 
-		//#region Instance
-		//private static GameManager instance;
-		//public static GameManager Instance
-		//{
-		//	get
-		//	{
-		//		if (instance == null)
-		//			instance = FindObjectOfType(typeof(GameManager)) as GameManager;
-		//		if (instance == null)
-		//		{
-		//			Debug.Log("Creating new GameManager");
-		//			instance = new GameObject("GameManager").AddComponent<GameManager>();
-		//			DontDestroyOnLoad(instance.gameObject);
-		//		}
-		//		return instance;
-		//	}
-		//}
-		//#endregion
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		#region Events
 		public event BonusHandler BonusCollected;
@@ -69,26 +69,26 @@ using UnityEngine;
 			base.Awake();
 			if (IsCanUse)
 			{
-				//Debug.Log("Awake in " + gameObject.name);
+				
 				DontDestroyOnLoad(gameObject);
 
 				info = new GameInfo();
 				info.Load();
 
 				Pool = new Pool<AbstractPoolableObject>();
-				//умная реинициализация пула
-				//if (PrefabInitializationManager != null)
-				//{
-				//	foreach (PrefabItem prefabItem in PrefabInitializationManager.PrefabItems)
-				//	{
-				//		if (prefabItem.prefab.GetComponent<AbstractPoolableObject>() != null)
-				//		{
-				//			Pool.InstantiateAndAdd(prefabItem.prefab.GetComponent<AbstractPoolableObject>(),
-				//				prefabItem.count);
-				//		}
-				//	}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
-				//}
+				
 			}
 
 		}
@@ -96,11 +96,11 @@ using UnityEngine;
 
 		private void FixedUpdate()
 		{
-			//TODO
-			//if (Controller.GetInstance() != null)
-			//{
-			//	bonuses.BatareyCharge -= currentLevelSettings.batteryConsumption;
-			//}
+			
+			
+			
+			
+			
 
 		}
 
@@ -111,8 +111,8 @@ using UnityEngine;
 			{
 				if (Application.loadedLevelName != defaultLevel)
 				{
-					//Debug.Log("menu->game in " + gameObject.name);
-					//ihntGUI.Instance.ShowIngameGUI();
+					
+					
 
 					trackChunkManager = TrackChunkManager.GetInstance();
 					currentLevelConfiguration = LevelConfiguration.Instance;
@@ -120,7 +120,7 @@ using UnityEngine;
 
 
 
-					//умная реинициализация пула
+					
 					if (PrefabInitializationManager != null)
 					{
 						foreach (PrefabItem prefabItem in PrefabInitializationManager.PrefabItems)
@@ -138,20 +138,20 @@ using UnityEngine;
 
 					if (Controller.GetInstance() != null)
 					{
-						//ставим игрока
-						//настраиваем трек
+						
+						
 
 						TrackAbstract.GetInstance().CalculateTrackState(currentLevelConfiguration.DefaultPosition);
 						Controller.GetInstance().MoveToPosition(currentLevelConfiguration.DefaultPosition);
 						trackChunkManager.Initialize(currentLevelConfiguration.DefaultPosition);
 
-						//говорим что бонусы изменились(т.к начало уровня)
+						
 						CollectionInitializedEvent(info.bonuses);
 					}
 				}
 				else
 				{
-					//Debug.Log("game->menu");
+					
 					Pool = new Pool<AbstractPoolableObject>();
 					trackChunkManager = null;
 					currentLevelConfiguration = null;
@@ -162,10 +162,10 @@ using UnityEngine;
 			}
 		}
 
-		/// <summary>
-		/// Сообщиить что левел закончен
-		/// </summary>
-		/// <param name="success">true - если игрок добежал до канца уровня</param>
+		
+		
+		
+		
 		public void LevelFinished(bool success)
 		{
 			info.LevelFinished(success);

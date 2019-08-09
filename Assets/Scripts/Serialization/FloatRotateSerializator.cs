@@ -4,9 +4,9 @@ using System;
 
 namespace Serialization
 {
-	/// <summary>
-	/// Полная информация об Float и Roatator 
-	/// </summary>
+	
+	
+	
 	[Serializable]
 	public class FloatRotate
 	{

@@ -2,9 +2,9 @@
 using System;
 using Random = UnityEngine.Random;
 
-/// <summary>
-/// Колебание вдоль оси Y в мировых координатах
-/// </summary>
+
+
+
 public class Floater : MonoBehaviour {
 
 	public float halfAmplitude; 
@@ -13,9 +13,9 @@ public class Floater : MonoBehaviour {
 
 	#region private vars
 
-	protected bool activated; // для оптимизации Update()
+	protected bool activated; 
 	private Transform _transform;
-	private float calculatedConst;// для оптимизации вычислений(меньше на одно действие)
+	private float calculatedConst;
 	private float lastTime;
 	private Vector3 savedPosition;
 	#endregion
@@ -42,10 +42,10 @@ public class Floater : MonoBehaviour {
 	{
 		if (!activated)
 		{
-			// запоминаем положение старта, чтобы потом вернуться
+			
 			savedPosition = transform.position;
 
-			//проверяем корректность данных
+			
 			if (period > 0.01)
 				calculatedConst = Mathf.PI*2f/period;
 			else
@@ -55,7 +55,7 @@ public class Floater : MonoBehaviour {
 				return;
 			}
 
-			//если надо, то рандомим начальное положение
+			
 			if (randomInitPosition)
 			{
 				float randomizeOffset = Random.Range(0, 10f);
@@ -76,7 +76,7 @@ public class Floater : MonoBehaviour {
 		if (activated)
 		{
 			activated = false;
-		   // _transform.Translate(savedPosition - _transform.position);
+		   
 		}
 	}
 

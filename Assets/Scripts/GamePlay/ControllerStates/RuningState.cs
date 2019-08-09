@@ -19,7 +19,7 @@ namespace GamePlay
 			}
 			else
 				controller.SetState(controller.JumpingState);
-					//свободное падение. в состояние прыжка войдем с verticalSpeed<0 
+					
 
 			return result;
 		}

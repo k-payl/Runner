@@ -36,9 +36,9 @@ namespace GamePlay
 			bonuses.LevelFinished(success);
 		}
 
-		/// <summary>
-		/// Всевозможные сохранения писать здесь
-		/// </summary>
+		
+		
+		
 		public void Save()
 		{
 			BinaryFormatter bf = new BinaryFormatter();
@@ -50,7 +50,7 @@ namespace GamePlay
 
 		public void Load()
 		{
-			//TODO
+			
 			if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
 			{
 				BinaryFormatter bf = new BinaryFormatter();
@@ -59,11 +59,11 @@ namespace GamePlay
 				{
 					GameInfo i = (GameInfo) bf.Deserialize(file);
 					Debug.Log("Loaded \'" + Application.persistentDataPath + "/playerInfo.dat\'");
-					//Дальше заполнение полей...
+					
 
 					i.bonuses.Load();
 					bonuses = i.bonuses;
-					//сигнал инициализации бонусов
+					
 					GameManager.Instance.CollectionInitializedEvent(bonuses);
 
 					completedLevels = i.completedLevels;

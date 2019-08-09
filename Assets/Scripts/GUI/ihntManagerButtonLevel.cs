@@ -11,7 +11,7 @@ public class ihntManagerButtonLevel : MonoBehaviour
 	public dfProgressBar bar;
 	private List<ihntButtonLevelItem> btnsLevels;
 
-	// Use this for initialization
+	
 	void Start ()
 	{
 		if (GetComponent<dfPanel>() != null)
@@ -31,7 +31,7 @@ public class ihntManagerButtonLevel : MonoBehaviour
 	{
 		btnsLevels = GetComponentsInChildren<ihntButtonLevelItem>().ToList();
 		btnsLevels.Sort();
-		//TODO инициализацию кнопок
+		
 		for (int i = 0; (i < (GameManager.Instance.info.completedLevels + 1)) && (i < btnsLevels.Count); i++)
 		{
 			btnsLevels[i].owner.Show();

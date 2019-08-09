@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Serialization
 {
-	/// <summary>
-	/// Использует GetInstanceID, поэтому этим компроатором можно сравнивать только объекты созданные в пределах одной сессии
-	/// Например один и тот же объект созданный до и после перезапуска эдитора для этого компратора будет разным. 
-	/// Для того чтобы сравнить такие объекты следует использовать MeshFilterDeepComparer
-	/// </summary>
+	
+	
+	
+	
+	
 	public class MeshFilterFastComparer : IEqualityComparer<IPoolable>
 	{
 

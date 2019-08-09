@@ -10,8 +10,8 @@ namespace LevelGeneration
 			base.ResetState();
 			transform.position = defaultPosition;
 
-			//выключаем для оптимизации
-			//TODO мб вынести в Float как static...
+			
+			
 			Floater f = GetComponent<Floater>();
 			Rotator r = GetComponent<Rotator>();
 			Floater f_c = GetComponentInChildren<Floater>();

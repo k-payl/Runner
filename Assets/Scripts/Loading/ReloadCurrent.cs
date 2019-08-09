@@ -19,7 +19,7 @@ namespace Loading
 
 		public override void Execute()
 		{
-			//перезагружаем чанки
+			
 			if (GameManager.Instance.trackChunkManager != null)
 			{
 				GameManager.Instance.trackChunkManager.DeInitialize();
@@ -27,12 +27,12 @@ namespace Loading
 				GameManager.Instance.currentLevelConfiguration.DefaultPosition);
 			}
 
-			//готовим трек
+			
 			TrackAbstract.GetInstance().CalculateTrackState(GameManager.Instance.currentLevelConfiguration.DefaultPosition);
 
-			//перемещаем игрока
+			
 			Controller.GetInstance().MoveToPosition(GameManager.Instance.currentLevelConfiguration.DefaultPosition);
-			//готовим игрока к новому забегу
+			
 			Controller.GetInstance().PrepareToReplay();
 
 			if (switchableBehaviour != null)

@@ -6,7 +6,7 @@ using LevelGeneration;
 namespace GamePlay
 {
 
-	//TODO: Во время прыжка случайный клип анимации может поменяться
+	
 	class JumpingState: BaseState
 	{
 		private int currentUpAnim;
@@ -18,7 +18,7 @@ namespace GamePlay
 		}
 		public override void Jump()
 		{
-		   // Debug.Log("trying jump");
+		   
 			Controller.SavedStates.PutState(controller.JumpingState);
 		}
 
@@ -83,8 +83,8 @@ namespace GamePlay
 			controller.ApplyAnimation(controller.Animations.Run, controller.CrossfadeTimes.Run);
 			Dead(DeadReason.DangerZone);
 		}
-		/// <summary>Делает нужные действия при переходе в отложенное в очередь состояние. 
-		/// Принимает RuningState, либо TurningState, либо  JumpingState, либо SwordAttackState, либо ShieldAttackState</summary>
+		
+		
 		protected override void ApplyLastState( BaseState state )
 		{
 			if ( state is RuningState )
@@ -99,7 +99,7 @@ namespace GamePlay
 			}
 			if ( state is JumpingState )
 			{
-				//it's important that "base." !
+				
 				base.Jump();
 			}
 			if ( state is SwordAttackState )

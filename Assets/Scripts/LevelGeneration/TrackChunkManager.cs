@@ -11,14 +11,14 @@ using System.Collections.Generic;
 namespace LevelGeneration
 {
 	
-	//[ExecuteInEditMode]
+	
 	public class TrackChunkManager : MonoBehaviour
 	{
 		public float ChunkSize;
 		public int NumberOfActiveChunksAhead;
 		public int NumberOfActiveChunksBehind;
-		public GameObject blockPrefab;// декоративный префаб для упаковки всех объектов в эти блоки
-		public List<TrackChunk> trackChuncks; //TODO convert to Queue
+		public GameObject blockPrefab;
+		public List<TrackChunk> trackChuncks; 
 		private int currentChunk = -1;
 		private static TrackChunkManager instance;
 		public static TrackChunkManager GetInstance()
@@ -33,10 +33,10 @@ namespace LevelGeneration
 
 		public void Start()
 		{
-			//if (trackChuncks.Count == 0 )
-			//{
-			//	trackChuncks = GetComponentsInChildren<TrackChunk>().ToList();
-			//}
+			
+			
+			
+			
 			if (trackChuncks==null) trackChuncks = new List<TrackChunk>();
 			
 
@@ -44,16 +44,16 @@ namespace LevelGeneration
 		}
 
 
-		/// <summary>
-		/// Правильно инициализировать чанки
-		/// </summary>
-		/// <param name="position">Начальное положение игрока</param>
+		
+		
+		
+		
 		public void Initialize(Vector3 position)
 		{
 			int startInd = -1;
 
-			//поиск стартового чанка
-			//todo убрать и начинать с 0
+			
+			
 			for (int i = 0; i < trackChuncks.Count; i++)
 				if (trackChuncks[i].Contains(position) && trackChuncks[i] != null)
 				{
@@ -61,14 +61,14 @@ namespace LevelGeneration
 					break;
 				}
 
-			//инициализация первых чанков
+			
 			if (startInd >= 0) CheckForNewChunks(trackChuncks[startInd]);
 		}
 
-		/// <summary>
-		/// Правильно вырубить
-		/// Использовать при перепрохождении уровня
-		/// </summary>
+		
+		
+		
+		
 		public void DeInitialize()
 		{
 			foreach (var chunck in trackChuncks)
@@ -84,7 +84,7 @@ namespace LevelGeneration
 				currentChunk = trackChuncks.IndexOf(chunk);
 				if(currentChunk > -1)
 				{
-					//вниз
+					
 					int i = currentChunk;
 					while ((i > -1) && (i > (currentChunk - NumberOfActiveChunksBehind)))
 					{
@@ -94,7 +94,7 @@ namespace LevelGeneration
 
 					if (--i > -1) trackChuncks[i].Deactivate();
 
-					//вверх
+					
 					i = currentChunk;
 					while ((i < trackChuncks.Count) && (i <= (currentChunk + NumberOfActiveChunksAhead)))
 					{
@@ -193,9 +193,9 @@ namespace LevelGeneration
 				UnityEditor.GameObjectUtility.SetStaticEditorFlags(newObjChunk, UnityEditor.StaticEditorFlags.BatchingStatic);
 				newObjChunk.transform.parent = gameObject.transform;
 				TrackChunk newChunk = newObjChunk.AddComponent<TrackChunk>();
-				//------main in this script--------
+				
 				newChunk.Init(startPoint, Poolables, ChunkSize);
-				//---------------
+				
 				newObjChunk.layer = newObjChunk.transform.parent.gameObject.layer;
 				trackChuncks.Add(newChunk);
 				Debug.Log("trackChunks.Count: "+trackChuncks.Count);
